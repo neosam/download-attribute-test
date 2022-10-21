@@ -22,10 +22,12 @@ const downloadPdfClick = (event) => {
 <h1>Download attribute test</h1>
 <p><a href="file.pdf">PDF Link</a></p>
 <p><a href="file.pdf" download>PDF download link</a></p>
-<p><a href="file.pdf" onClick=downloadPdfClick>PDF download javascript</a></p>
+<p><a href="file.pdf" id="pdf-download">PDF download javascript</a></p>
 <p><a href="image.png">PNG Link</a></p>
 <p><a href="image.png" download>PNG download link</a></p>
 
-
+<script type="text/javascript">
+document.getElementById("pdf-download").addEventListener("click", downloadPdfClick);
+</script>
 </body>
 </html>
