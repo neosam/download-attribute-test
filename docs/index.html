@@ -7,7 +7,7 @@ const downloadPdfClick = (event) => {
     event.preventDefault();
     fetch('file.pdf').then(data => {
         data.arrayBuffer().then(arrayBuffer => {
-            const newBlob = new Blob([arrayBuffer], {type: "application/pdf"});
+            const newBlob = new Blob([arrayBuffer], {type: ""});
             const linkElement = document.createElement("a");
             linkElement.href = URL.createObjectURL(newBlob);
             linkElement.download = "file.pdf";
