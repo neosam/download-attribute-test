@@ -2,11 +2,23 @@
 <html lang="en">
 <head>
 <title>Download a PDF</title>
+<script type="text/javascript">
+const downloadPdfClick = () => {
+    const linkElement = document.createElement("a");
+    linkElement.href = "file.pdf";
+    linkElement.download = "file.pdf";
+    document.body.appendChild(linkElement);
+    linkElement.click();
+    document.body.removeChild(linkElement);
+    
+};
+</script>
 </head>
 <body>
 <h1>Download attribute test</h1>
 <p><a href="file.pdf">PDF Link</a></p>
 <p><a href="file.pdf" download>PDF download link</a></p>
+<p><a href="file.pdf" onClick="downloadPdfClick()">PDF download javascript</a></p>
 <p><a href="image.png">PNG Link</a></p>
 <p><a href="image.png" download>PNG download link</a></p>
 
