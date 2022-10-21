@@ -6,13 +6,14 @@
 const downloadPdfClick = (event) => {
     event.preventDefault();
     fetch('file.pdf').then(data => {
+        data.blob().then(blob => {
         const linkElement = document.createElement("a");
-        linkElement.href = URL.createObjectURL(data.blob());
+        linkElement.href = URL.createObjectURL(blob);
         linkElement.download = "file.pdf";
         document.body.appendChild(linkElement);
         linkElement.click();
         document.body.removeChild(linkElement);
-            
+        });
     });
     return false;
 };
