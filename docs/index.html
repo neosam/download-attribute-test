@@ -3,17 +3,18 @@
 <head>
 <title>Download a PDF</title>
 <script type="text/javascript">
-const downloadPdfClick = () => {
+const downloadPdfClick = (event) => {
+    event.preventDefault();
     fetch('file.pdf').then(data => {
         const linkElement = document.createElement("a");
-        linkElement.href = window.URL.createObjectURL(data.blob());
+        linkElement.href = URL.createObjectURL(data.blob());
         linkElement.download = "file.pdf";
         document.body.appendChild(linkElement);
         linkElement.click();
         document.body.removeChild(linkElement);
             
     });
-    
+    return false;
 };
 </script>
 </head>
@@ -21,7 +22,7 @@ const downloadPdfClick = () => {
 <h1>Download attribute test</h1>
 <p><a href="file.pdf">PDF Link</a></p>
 <p><a href="file.pdf" download>PDF download link</a></p>
-<p><a href="file.pdf" onClick="downloadPdfClick()">PDF download javascript</a></p>
+<p><a href="file.pdf" onClick=downloadPdfClick>PDF download javascript</a></p>
 <p><a href="image.png">PNG Link</a></p>
 <p><a href="image.png" download>PNG download link</a></p>
 
