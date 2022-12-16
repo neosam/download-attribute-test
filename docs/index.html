@@ -24,6 +24,7 @@ const downloadPdfClick = (event) => {
 body {
     background-color: black;
     color: white;
+    display: flex;
 }
 ::-webkit-scrollbar {
     background: white;
@@ -33,12 +34,8 @@ body {
 }
 div.page {
     background: green;
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
     overflow-y: auto;
+    flow-grow: 1;
 }
 </style>
 </head>
